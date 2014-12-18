@@ -21,7 +21,8 @@ var fs = require('fs'),
 	flash = require('connect-flash'),
 	config = require('./config'),
 	consolidate = require('consolidate'),
-	path = require('path');
+	path = require('path'),
+	util = require('../util');
 
 module.exports = function(db) {
 	// Initialize express app
@@ -67,8 +68,11 @@ module.exports = function(db) {
 	// Environment dependent middleware
 	if (process.env.NODE_ENV === 'development') {
 		// Enable logger (morgan)
-		app.use(morgan('dev'));
-
+		//app.use(morgan('dev'));
+		morgan.token('datetime', function(req, res) {
+			return new Date().Format2();
+		});
+		app.use(morgan('[:datetime] :remote-addr :method :url :status :res[content-length] -:response-time ms'));
 		// Disable views cache
 		app.set('view cache', false);
 	} else if (process.env.NODE_ENV === 'production') {
