@@ -1,0 +1,5 @@
+NODE_ENV is not defined! Using default development environment
+NNB Wechat-API server listening on port 9002
+[2014-12-19 14:04:29] 127.0.0.1 GET / 404 13 -7.069 ms
+[2014-12-19 14:04:30] 127.0.0.1 GET /api/wechat/test 200 10 -2.785 ms
+error: Forever detected script exited with code: 1

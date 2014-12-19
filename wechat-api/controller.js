@@ -5,7 +5,7 @@
  */
 var mongoose = require('mongoose'),
 	_ = require('lodash'),
-	config = require('../../config/config'),
+	config = require('./config'),
 	wechat = require('wechat'),
 	API = require('wechat-api'),
 	api = new API(config.wechat.appId, config.wechat.appSecret),

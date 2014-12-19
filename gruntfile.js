@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 	// Unified Watch Object
 	var watchFiles = {
 		serverViews: ['app/views/**/*.*'],
-		serverJS: ['gruntfile.js', 'server.js', 'config/**/*.js', 'app/**/*.js', 'util/**/*.js'],
+		serverJS: ['gruntfile.js', 'server.js', 'config/**/*.js', 'app/**/*.js', 'util/**/*.js', 'wehcat-api/**/*.js'],
 		clientViews: ['public/modules/**/views/**/*.html'],
 		clientJS: ['public/js/*.js', 'public/modules/**/*.js'],
 		clientCSS: ['public/modules/**/*.css'],
@@ -138,6 +138,22 @@ module.exports = function(grunt) {
 		karma: {
 			unit: {
 				configFile: 'karma.conf.js'
+			}
+		},
+		forever: {
+			server: {
+				options: {
+					index: 'server.js',
+					logDir: 'logs'
+				}
+			},
+			'server-wechat-api': {
+				options: {
+					index: 'wechat-api/server.js',
+					logDir: 'logs',
+					logFile: 'out-wechat-api.log',
+					error: 'err-wechat-api.log'
+				}
 			}
 		}
 	});
