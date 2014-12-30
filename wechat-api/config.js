@@ -1,6 +1,12 @@
 'use strict';
-var appId = 'wxd2e4a7bd53b46381';
-var appSecret = '52b183c9341ff58bc70dc7e6c2f9b0c7';
+//var appId = 'wxd2e4a7bd53b46381';
+//var appSecret = '52b183c9341ff58bc70dc7e6c2f9b0c7';
+//var account = 'otmarine@vip.163.com';
+
+
+var appId = 'wx5cd8798b972e7a98';
+var appSecret = '095e15df8bb7a673792baad7d6d485c8';
+var account = 'nainiubang@126.com';
 
 module.exports = {
 	wechat: {
@@ -8,7 +14,7 @@ module.exports = {
 		token: 'nnb',
 		appId: appId,
 		appSecret: appSecret,
-		account: 'otmarine@vip.163.com',
+		account: account,
 		msgType: {
 			event: 'event',
 			text: 'text',
@@ -63,7 +69,7 @@ module.exports = {
 			contactUs: {
 				name: '联系我们',
 				key: 'CONTACT_US',
-				msg: '联系电话: 12345678\n联系微信: abcdefg'
+				msg: '联系电话: 021-51619161\n联系微信: nai_niu_bang'
 			}
 		}
 	}
