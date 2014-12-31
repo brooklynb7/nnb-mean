@@ -133,11 +133,11 @@ exports.index = wechat(config.wechat.token, function(req, res, next) {
 exports.createMenu = function(req, res) {
 	api.createMenu({
 		'button': [{
-			'name': menuButton.valuableBook.name,
+			'name': menuButton.bizIntro.name,
 			'sub_button': [{
-				'type': 'click',
-				'name': menuButton.bestGift.name,
-				'key': menuButton.bestGift.key
+				'type': 'view',
+				'name': menuButton.valuableBook.name,
+				'url': menuButton.bestGift.key
 			}, {
 				'type': 'click',
 				'name': menuButton.openMilk.name,
@@ -148,11 +148,7 @@ exports.createMenu = function(req, res) {
 				'key': menuButton.expertWord.key
 			}]
 		}, {
-			'type': 'click',
-			'name': menuButton.ourPrice.name,
-			'key': menuButton.ourPrice.key
-		}, {
-			'name': '奶牛帮',
+			'name': menuButton.orderStaff.name,
 			'sub_button': [{
 				'type': 'click',
 				'name': menuButton.honor.name,
@@ -162,6 +158,10 @@ exports.createMenu = function(req, res) {
 				'name': menuButton.contactUs.name,
 				'key': menuButton.contactUs.key
 			}]
+		},{
+			'type': 'click',
+			'name': menuButton.ourPrice.name,
+			'key': menuButton.ourPrice.key
 		}]
 	}, function(err, rst) {
 		res.send(rst);

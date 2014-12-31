@@ -1,20 +1,14 @@
 'use strict';
-//var appId = 'wxd2e4a7bd53b46381';
-//var appSecret = '52b183c9341ff58bc70dc7e6c2f9b0c7';
-//var account = 'otmarine@vip.163.com';
 
-
-var appId = 'wx5cd8798b972e7a98';
-var appSecret = '095e15df8bb7a673792baad7d6d485c8';
-var account = 'nainiubang@126.com';
+var wechatConfig = require('./config.wechat');
 
 module.exports = {
 	wechat: {
 		port: 9002,
 		token: 'nnb',
-		appId: appId,
-		appSecret: appSecret,
-		account: account,
+		appId: wechatConfig.appId,
+		appSecret: wechatConfig.appSecret,
+		account: wechatConfig.account,
 		msgType: {
 			event: 'event',
 			text: 'text',
@@ -39,7 +33,14 @@ module.exports = {
 		subscribeMsg: '感谢您关注奶牛帮！我们将竭诚为您服务',
 		menuButton: {
 			valuableBook: {
-				name: '母乳喂养'
+				name: '开奶宝典'
+				url: ''
+			},
+			bizIntro:{
+				name: '业务介绍'
+			},
+			orderStaff:{
+				name:'预约开奶师'
 			},
 			bestGift: {
 				name: '母乳,宝宝最好的礼物',
@@ -57,7 +58,7 @@ module.exports = {
 				msg: '世界卫生组织这样说：在婴儿出生的头一个小时里就开始母乳喂养；“根据需要”进行母乳喂养，不管白天或是晚上，婴儿一旦有需要就进行喂养，不使用奶瓶或安抚奶嘴。\n我国卫生部这样说：应当在新生儿出生后1小时内开始喂奶，早接触、早吸吮、早开奶，按需哺乳。'
 			},
 			ourPrice: {
-				name: '价格咨询',
+				name: '价格',
 				key: 'OUR_PRICE',
 				msg: '上门服务\n中环以内：600/次\n中环以外：700/次'
 			},
