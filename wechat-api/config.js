@@ -33,8 +33,16 @@ module.exports = {
 		subscribeMsg: '感谢您关注奶牛帮！我们将竭诚为您服务',
 		menuButton: {
 			valuableBook: {
-				name: '开奶宝典'
-				url: ''
+				name: '开奶宝典',
+				url: wechatConfig.url
+			},
+			activities: {
+				name: '最新活动',
+				url: wechatConfig.url + '/activities'
+			},
+			about:{
+				name:'关于奶牛帮',
+				url: wechatConfig.url + '/about'
 			},
 			bizIntro:{
 				name: '业务介绍'
@@ -70,7 +78,7 @@ module.exports = {
 			contactUs: {
 				name: '联系我们',
 				key: 'CONTACT_US',
-				msg: '联系电话: 021-51619161\n联系微信: nai_niu_bang'
+				msg: '亲, 我们的服务热线是51619161, 期待您的来电'
 			}
 		}
 	}

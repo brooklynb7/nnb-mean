@@ -137,15 +137,15 @@ exports.createMenu = function(req, res) {
 			'sub_button': [{
 				'type': 'view',
 				'name': menuButton.valuableBook.name,
-				'url': menuButton.bestGift.key
+				'url': menuButton.valuableBook.url
 			}, {
-				'type': 'click',
-				'name': menuButton.openMilk.name,
-				'key': menuButton.openMilk.key
+				'type': 'view',
+				'name': menuButton.activities.name,
+				'url': menuButton.activities.url
 			}, {
-				'type': 'click',
-				'name': menuButton.expertWord.name,
-				'key': menuButton.expertWord.key
+				'type': 'view',
+				'name': menuButton.about.name,
+				'url': menuButton.about.url
 			}]
 		}, {
 			'name': menuButton.orderStaff.name,

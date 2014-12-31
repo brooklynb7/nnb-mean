@@ -2,9 +2,9 @@
 
 module.exports = {
 	app: {
-		title: 'nnb',
-		description: 'Full-Stack JavaScript with MongoDB, Express, AngularJS, and Node.js',
-		keywords: 'MongoDB, Express, AngularJS, Node.js'
+		title: '奶牛帮',
+		description: '奶牛帮',
+		keywords: '奶牛帮'
 	},
 	port: process.env.PORT || 9001,
 	templateEngine: 'swig',

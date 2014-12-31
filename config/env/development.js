@@ -3,7 +3,7 @@
 module.exports = {
 	db: 'mongodb://localhost/nnb-dev',
 	app: {
-		title: 'nnb - Development Environment'
+		title: '奶牛帮'
 	},
 	facebook: {
 		clientID: process.env.FACEBOOK_ID || 'APP_ID',
