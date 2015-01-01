@@ -1,0 +1,2 @@
+db.users.update({"_id":""},{"$set":{"roles":["user","service","admin","super"]}})
+

@@ -1,21 +1,45 @@
 <section data-ng-controller="OrdersController" data-ng-init="findOne()">
 	<div class="page-header">
-		<h1 data-ng-bind="order.name"></h1>
+		<h1>订单编号:{{order._id}}</h1>
 	</div>
 	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == order.user._id))">
 		<a class="btn btn-primary" href="/#!/orders/{{order._id}}/edit">
-			<i class="glyphicon glyphicon-edit"></i>
+			编辑订单
 		</a>
-		<a class="btn btn-primary" data-ng-click="remove();">
-			<i class="glyphicon glyphicon-trash"></i>
+		<a class="btn btn-primary" data-ng-click="cancel();">
+			取消订单
 		</a>
 	</div>
 	<small>
 		<em class="text-muted">
-			Posted on
-			<span data-ng-bind="order.created | date:'mediumDate'"></span>
-			by
+			<span data-ng-bind="order.created | date:'yyyy-MM-dd HH:mm:ss'"></span>
+			由
 			<span data-ng-bind="order.user.displayName"></span>
+			创建
 		</em>
 	</small>
+	<div class="col-md-12">
+        <form class="form-horizontal">
+            <fieldset>
+                <div class="form-group">
+                    <label class="control-label" for="name">姓名:</label> {{order.name}}
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="nickName">昵称:</label> {{order.nickName}}
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="phone">电话:</label> {{order.phone}}
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="address">家庭地址:</label> {{order.address}}
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="daysAfterBearing">产后第几天:</label> {{order.daysAfterBearing | getDaysAfterBearingText:daysAfterBearingOptions }}
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="hasFever">有无发烧: </label> {{order.hasFever | getHasFeverText }}
+                </div>
+            </fieldset>
+        </form>
+    </div>
 </section>

@@ -13,8 +13,32 @@ var OrderSchema = new Schema({
 	name: {
 		type: String,
 		default: '',
-		required: 'Please fill Order name',
 		trim: true
+	},
+	nickName: {
+		type: String,
+		default: '',
+		trim: true
+	},
+	phone: {
+		type: String,
+		default: '',
+		required: '请填写电话号码',
+		trim: true
+	},
+	address: {
+		type: String,
+		default: '',
+		trim: true
+	},
+	daysAfterBearing: {
+		type: String,
+		default: '',
+		trim: true
+	},
+	hasFever: {
+		type: Boolean,
+		default: false
 	},
 	created: {
 		type: Date,
@@ -23,6 +47,17 @@ var OrderSchema = new Schema({
 	user: {
 		type: Schema.ObjectId,
 		ref: 'User'
+	},
+	updated:{
+		type: Date
+	},
+	updatedBy: {
+		type: Schema.ObjectId,
+		ref: 'User'
+	},
+	status: {
+		type: Number,
+		default: 0
 	}
 });
 

@@ -52,6 +52,22 @@ exports.update = function(req, res) {
 	});
 };
 
+exports.cancel = function(req,res){
+	var order = req.order;
+
+	order.status = -1;
+
+	order.save(function(err) {
+		if (err) {
+			return res.status(400).send({
+				message: errorHandler.getErrorMessage(err)
+			});
+		} else {
+			res.jsonp(order);
+		}
+	});	
+};
+
 /**
  * Delete an Order
  */

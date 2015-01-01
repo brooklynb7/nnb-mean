@@ -1,18 +1,56 @@
 <section data-ng-controller="OrdersController" data-ng-init="findOne()">
     <div class="page-header">
-        <h1>Edit Order</h1>
+        <h1>编辑订单: {{order._id}}</h1>
     </div>
     <div class="col-md-12">
         <form class="form-horizontal" data-ng-submit="update()" novalidate>
             <fieldset>
                 <div class="form-group">
-                    <label class="control-label" for="name">Name</label>
+                    <label class="control-label" for="name">姓名</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="order.name" id="name" class="form-control" placeholder="Name" required>
+                        <input type="text" data-ng-model="order.name" disabled id="name" class="form-control" placeholder="姓名" >
                     </div>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Update" class="btn btn-default">
+                    <label class="control-label" for="nickName">昵称</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="order.nickName" disabled id="nickName" class="form-control" placeholder="昵称" require>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="phone">电话</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="order.phone" disabled id="phone" class="form-control" placeholder="电话" require>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="address">家庭地址</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="order.address" id="address" class="form-control" placeholder="家庭地址">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="daysAfterBearing">产后第几天</label>
+                    <div class="controls">
+                        <select data-ng-model="order.daysAfterBearing" class="form-control" id="daysAfterBearing" ng-options="m.id as m.value for m in daysAfterBearingOptions">
+                        </select>  
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="hasFever">有无发烧</label>
+                    <div class="controls">
+                        <!-- <input type="text" data-ng-model="hasFever" id="hasFever" class="form-control" placeholder="有无发烧"> -->
+                        <label>
+                            <input type="radio" name="hasFever" value="" ng-model="order.hasFever" />无
+                        </label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label>
+                            <input type="radio" name="hasFever" value="1" ng-model="order.hasFever" />有
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="更新" class="btn btn-default">
                 </div>
 				<div data-ng-show="error" class="text-danger">
 					<strong data-ng-bind="error"></strong>

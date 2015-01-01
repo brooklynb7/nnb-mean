@@ -3,10 +3,15 @@
 //Orders service used to communicate Orders REST endpoints
 angular.module('orders').factory('Orders', ['$resource',
 	function($resource) {
-		return $resource('orders/:orderId', { orderId: '@_id'
+		return $resource('orders/:orderId', {
+			orderId: '@_id'
 		}, {
 			update: {
 				method: 'PUT'
+			},
+			cancel: {
+				method: 'PUT',
+				url: 'orders/:orderId/cancel'
 			}
 		});
 	}

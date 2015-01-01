@@ -27,7 +27,7 @@ exports.userByID = function(req, res, next, id) {
 exports.requiresLogin = function(req, res, next) {
 	if (!req.isAuthenticated()) {
 		return res.status(401).send({
-			message: 'User is not logged in'
+			message: '请先登录'
 		});
 	}
 
@@ -46,7 +46,7 @@ exports.hasAuthorization = function(roles) {
 				return next();
 			} else {
 				return res.status(403).send({
-					message: 'User is not authorized'
+					message: '未授权'
 				});
 			}
 		});
