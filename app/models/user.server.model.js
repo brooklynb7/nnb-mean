@@ -28,14 +28,12 @@ var UserSchema = new Schema({
 	firstName: {
 		type: String,
 		trim: true,
-		default: '',
-		validate: [validateLocalStrategyProperty, 'Please fill in your first name']
+		default: ''
 	},
 	lastName: {
 		type: String,
 		trim: true,
-		default: '',
-		validate: [validateLocalStrategyProperty, 'Please fill in your last name']
+		default: ''
 	},
 	displayName: {
 		type: String,
@@ -59,6 +57,21 @@ var UserSchema = new Schema({
 		default: '',
 		validate: [validateLocalStrategyPassword, 'Password should be longer']
 	},
+	mobile: {
+		type: String,
+		default: '',
+		trim: true
+	},
+	openid: {
+		type: String,
+		default: '',
+		trim: true
+	},
+	nickName:{
+		type: String,
+		default: '',
+		trim: true
+	},
 	salt: {
 		type: String
 	},
@@ -71,7 +84,7 @@ var UserSchema = new Schema({
 	roles: {
 		type: [{
 			type: String,
-			enum: ['user', 'admin']
+			enum: ['user', 'service' ,'admin', 'super']
 		}],
 		default: ['user']
 	},
