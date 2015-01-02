@@ -1,17 +1,15 @@
 <section data-ng-controller="OrdersController" data-ng-init="find()">
     <div class="page-header">
-        <h1>订单列表</h1>
+        <h2>订单列表</h2>
     </div>
     <div class="list-group">
         <a data-ng-repeat="order in orders" data-ng-href="#!/orders/{{order._id}}" class="list-group-item">
-            <h4 class="list-group-item-heading">订单号: {{order.orderId}} / 名字:{{order.name||order.nickName}} / 电话:{{order.phone}}</h4>
-			<small class="list-group-item-text">				
-				<span data-ng-bind="order.created | date:'yyyy-MM-dd HH:mm:ss'"></span>
-				由
-				<span data-ng-bind="order.user.displayName || order.user.nickName || order.user.userName"></span>
-                创建 / 订单状态: 
-                <span data-ng-include="'./modules/orders/views/_order-status.client.view.html'"></span>
-			</small>			
+            <h4 class="list-group-item-heading">
+                订单号: {{order.orderId}} / 名字:{{order.name||order.nickName}} / 电话:{{order.phone}}
+            </h4>
+			<small class="list-group-item-text" data-ng-include="'./modules/orders/views/_order-user.client.view.html'">
+            </small>
+            <span data-ng-include="'./modules/orders/views/_order-status.client.view.html'"></span>
         </a>
     </div>
     <div class="alert alert-warning text-center" data-ng-hide="!orders.$resolved || orders.length">

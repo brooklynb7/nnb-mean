@@ -2,6 +2,7 @@
 
 angular.module('wechat').controller('WechatController', ['$scope', '$stateParams', '$location', 'Authentication', 'Orders',
 	function($scope, $stateParams, $location, Authentication, Orders) {
+		$scope.authentication = Authentication;
 		$scope.daysAfterBearing = '1';
 		$scope.hasFever = '';
 		$scope.daysAfterBearingOptions = [

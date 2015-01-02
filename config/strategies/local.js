@@ -11,7 +11,7 @@ module.exports = function() {
 	// Use local strategy
 	passport.use(new LocalStrategy({
 			usernameField: 'username',
-			passwordField: 'password'
+			passwordField: 'password'			
 		},
 		function(username, password, done) {
 			User.findOne({
@@ -22,12 +22,12 @@ module.exports = function() {
 				}
 				if (!user) {
 					return done(null, false, {
-						message: 'Unknown user or invalid password'
+						message: '用户名/密码不正确'
 					});
 				}
 				if (!user.authenticate(password)) {
 					return done(null, false, {
-						message: 'Unknown user or invalid password'
+						message: '用户名/密码不正确'
 					});
 				}
 

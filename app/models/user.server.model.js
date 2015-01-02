@@ -55,7 +55,7 @@ var UserSchema = new Schema({
 	password: {
 		type: String,
 		default: '',
-		validate: [validateLocalStrategyPassword, 'Password should be longer']
+		validate: [validateLocalStrategyPassword, '密码长度不够']
 	},
 	mobile: {
 		type: String,

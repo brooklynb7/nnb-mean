@@ -1,5 +1,6 @@
 <div class="col-md-12">
-    我们的工作人员正在处理订单，在此期间您可以 <a href='#!/wechat/orders/{{order._id}}/edit'>修改</a> 您的订单
+    <div>我们的工作人员正在处理订单，稍后将于您联系。</div>
+    <div data-ng-show='authentication.user'>在此期间您可以 <a href='#!/wechat/orders/{{order._id}}/edit'>修改</a> 您的订单</div>
 </div>
 <div class="col-md-12">
 	<div class="form-group">

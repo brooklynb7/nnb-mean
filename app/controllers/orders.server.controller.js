@@ -121,7 +121,7 @@ exports.orderByID = function(req, res, next, id) {
  * Order authorization middleware
  */
 exports.hasAuthorization = function(req, res, next) {
-	if (req.order.user.id !== req.user.id && !_.contains(req.user.roles, 'service') && !_.contains(req.user.roles, 'admin') && !_.contains(req.user.roles, 'super') ) {
+	if ( (req.order.user && (req.order.user.id !== req.user.id)) && !_.contains(req.user.roles, 'service') && !_.contains(req.user.roles, 'admin') && !_.contains(req.user.roles, 'super') ) {
 		return res.status(403).send('未授权');
 	}
 	next();
