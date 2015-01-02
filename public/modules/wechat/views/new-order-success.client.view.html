@@ -1,0 +1,9 @@
+<section data-ng-controller="WechatController" data-ng-init="findOne()">
+	<div class="page-header">
+        <h1>我的订单 -- 创建成功</h1>
+    </div>
+    <div class="col-md-12">
+    	您的开奶订单创建成功，订单号为 <span class='red'>{{order.orderId}}</span> 。    	
+    </div>
+	<div data-ng-include="'./modules/wechat/views/_order-info.client.view.html'"></div>
+</section>

@@ -4,7 +4,7 @@
 angular.module('orders').controller('OrdersController', ['$scope', '$stateParams', '$location', 'Authentication', 'Orders',
 	function($scope, $stateParams, $location, Authentication, Orders) {
 		$scope.authentication = Authentication;
-		$scope.daysAfterBearing = "1";
+		$scope.daysAfterBearing = '1';
 		$scope.hasFever = '';
 		$scope.daysAfterBearingOptions = [
 			{id:'1',value:'1天'},
@@ -23,6 +23,12 @@ angular.module('orders').controller('OrdersController', ['$scope', '$stateParams
 			{id:'14',value:'14天'},
 			{id:'15',value:'15天'},
 			{id:'16',value:'大于15天'}
+		];
+		$scope.statusOptions = [
+			{id: -1, value:'已取消'},
+			{id: 0, value:'新订单'},
+			{id: 1, value:'已确认'},
+			{id: 2, value:'已完成'}
 		];
 
 		// Create new Order
@@ -43,6 +49,11 @@ angular.module('orders').controller('OrdersController', ['$scope', '$stateParams
 
 				// Clear form fields
 				$scope.name = '';
+				$scope.nickName = '';
+				$scope.phone = '';
+				$scope.address = '';
+				$scope.daysAfterBearing = '1';
+				$scope.hasFever = '';
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});
@@ -70,6 +81,7 @@ angular.module('orders').controller('OrdersController', ['$scope', '$stateParams
 		// Update existing Order
 		$scope.update = function() {
 			var order = $scope.order;
+			order.status = parseInt($scope.order.status);
 
 			order.$update(function() {
 				$location.path('orders/' + order._id);
@@ -86,7 +98,7 @@ angular.module('orders').controller('OrdersController', ['$scope', '$stateParams
 		// Find existing Order
 		$scope.findOne = function() {
 			$scope.order = Orders.get({ 
-				orderId: $stateParams.orderId
+				id: $stateParams.id
 			});
 		};
 	}

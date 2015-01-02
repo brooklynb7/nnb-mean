@@ -24,7 +24,7 @@ module.exports = {
 		mp_login_url: 'https://mp.weixin.qq.com/cgi-bin/login?lang=zh_CN',
 		generateOAuthUrl: function(redirect_uri) {
 			return 'https://open.weixin.qq.com/connect/oauth2/authorize?' +
-				'appid=' + appId + '&' +
+				'appid=' + wechatConfig.appId + '&' +
 				'redirect_uri=' + encodeURIComponent(redirect_uri) + '&' +
 				'response_type=code&' +
 				'scope=snsapi_base&' +

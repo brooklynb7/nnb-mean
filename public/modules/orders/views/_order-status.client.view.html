@@ -1,0 +1,3 @@
+<span class="bg-status" ng-class="{'bg-primary': (order.status == 0), 'bg-red':(order.status == -1), 'bg-confirm':(order.status == 1), 'bg-complete':(order.status == 2)}">
+    {{order.status | getOrderStatusText}}
+</span>

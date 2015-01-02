@@ -4,7 +4,8 @@
  * Module dependencies.
  */
 var mongoose = require('mongoose'),
-	Schema = mongoose.Schema;
+	Schema = mongoose.Schema,
+	autoIncrement = require('mongoose-auto-increment');
 
 /**
  * Order Schema
@@ -59,6 +60,13 @@ var OrderSchema = new Schema({
 		type: Number,
 		default: 0
 	}
+});
+
+OrderSchema.plugin(autoIncrement.plugin, {
+    model: 'Order',
+    field: 'orderId',
+    startAt: 100000,
+    incrementBy: 1
 });
 
 mongoose.model('Order', OrderSchema);

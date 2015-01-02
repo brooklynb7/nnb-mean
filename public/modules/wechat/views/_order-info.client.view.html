@@ -1,0 +1,23 @@
+<div class="col-md-12">
+    我们的工作人员正在处理订单，在此期间您可以 <a href='#!/wechat/orders/{{order._id}}/edit'>修改</a> 您的订单
+</div>
+<div class="col-md-12">
+	<div class="form-group">
+		订单信息如下:
+	</div>
+    <div class="form-group">
+        <label class="control-label" for="nickName">昵称:</label> {{order.nickName}}
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="phone">电话:</label> {{order.phone}}
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="address">家庭地址:</label> {{order.address}}
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="daysAfterBearing">产后第几天:</label> {{order.daysAfterBearing | getDaysAfterBearingText:daysAfterBearingOptions }}
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="hasFever">有无发烧: </label> {{order.hasFever | getHasFeverText }}
+    </div>
+</div>

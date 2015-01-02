@@ -5,6 +5,7 @@
 var init = require('./config/init')(),
 	config = require('./config/config'),
 	mongoose = require('mongoose'),
+	autoIncrement = require('mongoose-auto-increment'),
 	chalk = require('chalk');
 
 /**
@@ -19,6 +20,7 @@ var db = mongoose.connect(config.db, function(err) {
 		console.log(chalk.red(err));
 	}
 });
+autoIncrement.initialize(db);
 
 // Init the express application
 var app = require('./config/express')(db);

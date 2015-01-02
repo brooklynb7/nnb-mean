@@ -40,6 +40,9 @@ exports.update = function(req, res) {
 	var order = req.order ;
 
 	order = _.extend(order , req.body);
+	
+	order.updated = Date.now();
+	order.updatedBy = req.user;
 
 	order.save(function(err) {
 		if (err) {
@@ -56,6 +59,8 @@ exports.cancel = function(req,res){
 	var order = req.order;
 
 	order.status = -1;
+	order.updated = Date.now();
+	order.updatedBy = req.user;
 
 	order.save(function(err) {
 		if (err) {
@@ -116,8 +121,8 @@ exports.orderByID = function(req, res, next, id) {
  * Order authorization middleware
  */
 exports.hasAuthorization = function(req, res, next) {
-	if (req.order.user.id !== req.user.id) {
-		return res.status(403).send('User is not authorized');
+	if (req.order.user.id !== req.user.id && !_.contains(req.user.roles, 'service') && !_.contains(req.user.roles, 'admin') && !_.contains(req.user.roles, 'super') ) {
+		return res.status(403).send('未授权');
 	}
 	next();
 };
