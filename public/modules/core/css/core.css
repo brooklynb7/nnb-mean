@@ -4,6 +4,9 @@
 .relative{
 	position: relative;
 }
+.absolute{
+	position: absolute;
+}
 .undecorated-link:hover {
 	text-decoration: none;
 }
@@ -27,6 +30,12 @@
 }
 .m-t-15{
 	margin-top: 15px;
+}
+.r-10{
+	right: 10px;
+}
+.b-16{
+	bottom: 16px;
 }
 .bg-status{
 	color: #fff;

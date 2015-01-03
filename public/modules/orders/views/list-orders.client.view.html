@@ -1,7 +1,7 @@
 <section data-ng-controller="OrdersController" data-ng-init="find()">
-    <div class="page-header">
+    <div class="page-header relative">
         <h2>订单列表</h2>
-        <a>新建订单</a>
+        <a href="#!/orders/create" class="absolute r-10 b-16">新建订单</a>
     </div>
     <div class="list-group">
         <a data-ng-repeat="order in orders" data-ng-href="#!/orders/{{order._id}}" class="list-group-item">
