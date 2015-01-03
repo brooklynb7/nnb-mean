@@ -35,8 +35,11 @@
 	right: 10px;
 	bottom: 16px;
 }
-.bg-red{
-	background-color: #F44336;
+.bg-new{
+	background-color: #C62828;
+}
+.bg-cancel{
+	background-color: #78909C;
 }
 .bg-confirm{
 	background-color: #00796B;
