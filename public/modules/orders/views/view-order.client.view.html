@@ -1,6 +1,11 @@
 <section data-ng-controller="OrdersController" data-ng-init="findOne()">
-	<div class="page-header relative">
-		<h2>订单号:{{order.orderId}}</h2>
+	<div class="page-header relative">        
+    	<h2>
+            <a href="#!/orders" class="pull-left">
+                <i class="glyphicon glyphicon-arrow-left"></i>
+            </a>
+            订单号:{{order.orderId}}
+        </h2>
         <span data-ng-include="'./modules/orders/views/_order-status.client.view.html'"></span>
 	</div>
 	<div class="pull-right" data-ng-show="((authentication.user) && 
