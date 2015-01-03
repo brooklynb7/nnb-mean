@@ -5,6 +5,10 @@ angular.module('wechat').config(['$stateProvider',
 	function($stateProvider) {
 		// Wechat state routing
 		$stateProvider.
+		state('wechat-my-orders', {
+			url: '/wechat/orders/my',
+			templateUrl: 'modules/wechat/views/my-orders.client.view.html'
+		}).
 		state('wechat-edit-order-success', {
 			url: '/wechat/orders/:id/edit/success',
 			templateUrl: 'modules/wechat/views/edit-order-success.client.view.html'

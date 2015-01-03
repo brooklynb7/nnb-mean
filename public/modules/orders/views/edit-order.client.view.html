@@ -1,11 +1,11 @@
 <section data-ng-controller="OrdersController" data-ng-init="findOne()">
     <div class="page-header">
-        <h2>
+        <h3>
             <a href="#!/orders/{{order._id}}" class="pull-left">
                 <i class="glyphicon glyphicon-arrow-left"></i>
             </a>
             编辑订单: {{order.orderId}}
-        </h2>
+        </h3>
     </div>
     <div class="col-md-12">
         <form class="form-horizontal" data-ng-submit="update()" novalidate>

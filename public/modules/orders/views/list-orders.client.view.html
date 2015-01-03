@@ -1,13 +1,13 @@
 <section data-ng-controller="OrdersController" data-ng-init="find()">
     <div class="page-header relative">
-        <h2>订单列表</h2>
+        <h3>订单列表</h3>
         <a href="#!/orders/create" class="absolute r-10 b-16">新建订单</a>
     </div>
     <div class="list-group">
         <a data-ng-repeat="order in orders" data-ng-href="#!/orders/{{order._id}}" class="list-group-item">
-            <h4 class="list-group-item-heading">
+            <h5 class="list-group-item-heading">
                 订单号: {{order.orderId}} / 名字:{{order.name||order.nickName}} / 电话:{{order.phone}}
-            </h4>
+            </h5>
 			<small class="list-group-item-text" data-ng-include="'./modules/orders/views/_order-user.client.view.html'">
             </small>
             <span data-ng-include="'./modules/orders/views/_order-status.client.view.html'"></span>

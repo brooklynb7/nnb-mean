@@ -1,0 +1,17 @@
+<section data-ng-controller="UsersController" data-ng-init="find()">
+    <div class="page-header relative">
+        <h3>用户列表</h3>
+        <!-- <a href="#!/orders/create" class="absolute r-10 b-16">新建订单</a> -->
+    </div>
+    <div class="list-group">
+    	<!-- data-ng-href="#!/orders/{{order._id}}" -->
+        <a data-ng-repeat="user in users"  class="list-group-item">
+            <h5 class="list-group-item-heading">
+                用户名: {{user.username}} / 角色:{{user.roles | getRolesText}} / 全名: {{user.displayName}}
+            </h5>
+			<small class="list-group-item-text">
+				<span data-ng-bind="user.created | date:'yyyy-MM-dd HH:mm:ss'"></span>创建
+            </small>            
+        </a>
+    </div>
+</section>

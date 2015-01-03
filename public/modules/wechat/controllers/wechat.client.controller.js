@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('wechat').controller('WechatController', ['$scope', '$stateParams', '$location', 'Authentication', 'Orders',
-	function($scope, $stateParams, $location, Authentication, Orders) {
+angular.module('wechat').controller('WechatController', ['$scope','$http', '$stateParams', '$location', 'Authentication', 'Orders',
+	function($scope,$http, $stateParams, $location, Authentication, Orders) {
 		$scope.authentication = Authentication;
 		$scope.daysAfterBearing = '1';
 		$scope.hasFever = '';
@@ -84,6 +84,17 @@ angular.module('wechat').controller('WechatController', ['$scope', '$stateParams
 		$scope.findOne = function() {			
 			$scope.order = Orders.get({ 
 				id: $stateParams.id
+			});
+		};
+
+		$scope.myOrder = function(){
+			$scope.code = $location.search().code;
+			$http.post('./users/wechat/info', {'code':$scope.code}).success(function(response) {
+				// If successful we assign the response to the global user model
+				//$scope.authentication.user = response;
+				$scope.wechatUser = response;
+			}).error(function(response) {
+				$scope.error = response.message;
 			});
 		};
 	}

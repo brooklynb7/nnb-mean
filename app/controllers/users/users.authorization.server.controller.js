@@ -52,3 +52,10 @@ exports.hasAuthorization = function(roles) {
 		});
 	};
 };
+
+exports.hasSuperAuthorization = function(req, res, next) {
+	if (!_.contains(req.user.roles, 'super') ) {
+		return res.status(403).send('未授权');
+	}
+	next();
+};

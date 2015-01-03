@@ -150,9 +150,13 @@ exports.createMenu = function(req, res) {
 		}, {
 			'name': menuButton.orderStaff.name,
 			'sub_button': [{
-				'type': 'click',
-				'name': menuButton.honor.name,
-				'key': menuButton.honor.key
+				'type': 'view',
+				'name': menuButton.newOrder.name,
+				'url': menuButton.newOrder.url
+			},{
+				'type': 'view',
+				'name': menuButton.modifyOrder.name,
+				'url': menuButton.modifyOrder.url
 			}, {
 				'type': 'click',
 				'name': menuButton.contactUs.name,

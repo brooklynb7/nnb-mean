@@ -25,6 +25,13 @@ angular.module('users').config(['$httpProvider',
 					}
 				};
 			}
-		]);
+		]);	
+	}
+]).run(['Menus','USER_ROLES',
+	function(Menus, USER_ROLES) {
+
+		Menus.addMenuItem('topbar', '用户管理', 'users', 'dropdown', '/users(/create)?', false, [USER_ROLES.super], 99);
+		Menus.addSubMenuItem('topbar', 'users', '用户列表', 'users');
+		//Menus.addSubMenuItem('topbar', 'users', '新建用户', 'users/create');
 	}
 ]);

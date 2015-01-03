@@ -1,6 +1,8 @@
 'use strict';
 
 var wechatConfig = require('./config.wechat');
+var OAuth = require('wechat-oauth');
+var client = new OAuth(wechatConfig.appId, wechatConfig.appSecret);
 
 module.exports = {
 	wechat: {
@@ -44,11 +46,19 @@ module.exports = {
 				name:'关于奶牛帮',
 				url: wechatConfig.url + '/about'
 			},
+			newOrder:{
+				name: '下订单',
+				url: wechatConfig.url + '/orders/new'
+			},
+			modifyOrder: {
+				name: 'OAuth测试',
+				url: client.getAuthorizeURL(wechatConfig.url + '/orders/my', '1', 'snsapi_userinfo')
+			},
 			bizIntro:{
 				name: '业务介绍'
 			},
 			orderStaff:{
-				name:'预约开奶师'
+				name:'预约开奶'
 			},
 			bestGift: {
 				name: '母乳,宝宝最好的礼物',
