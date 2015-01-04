@@ -12,6 +12,10 @@ angular.module('orders').factory('Orders', ['$resource',
 			cancel: {
 				method: 'PUT',
 				url: 'orders/:id/cancel'
+			},
+			myLatest: {
+				method: 'GET',
+				url: 'orders/my/latest'
 			}
 		});
 	}

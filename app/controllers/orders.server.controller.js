@@ -105,6 +105,24 @@ exports.list = function(req, res) {
 	});
 };
 
+exports.myLatest = function(req, res){
+	var user = req.user;
+	Order.find({
+		user: user._id,
+		status: {
+			'$ne': -1
+		}
+	}).sort('-created').limit(1).exec(function(err, orders){
+		if(err) {
+			return res.status(400).send({
+				message: errorHandler.getErrorMessage(err)
+			});
+		} else {
+			res.jsonp(orders[0]);
+		}
+	});
+};
+
 /**
  * Order middleware
  */

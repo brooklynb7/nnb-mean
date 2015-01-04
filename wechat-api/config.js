@@ -48,11 +48,11 @@ module.exports = {
 			},
 			newOrder:{
 				name: '下订单',
-				url: wechatConfig.url + '/orders/new'
+				url: client.getAuthorizeURL(wechatConfig.host + '/auth/wechat?cb=' + encodeURIComponent(wechatConfig.url + '/orders/new'), '1', 'snsapi_userinfo')
 			},
 			modifyOrder: {
-				name: 'OAuth测试',
-				url: client.getAuthorizeURL(wechatConfig.url + '/orders/my', '1', 'snsapi_userinfo')
+				name: '修改/取消订单',
+				url: client.getAuthorizeURL(wechatConfig.host + '/auth/wechat?cb=' + encodeURIComponent(wechatConfig.url + '/orders/my'), '1', 'snsapi_userinfo')
 			},
 			bizIntro:{
 				name: '业务介绍'

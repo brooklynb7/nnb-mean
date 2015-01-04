@@ -24,6 +24,11 @@ angular.module('wechat').controller('WechatController', ['$scope','$http', '$sta
 			{id:'16',value:'大于15天'}
 		];
 
+		$scope.nickName = $scope.authentication ? $scope.authentication.user.username : '';
+		$scope.myLatestOrder = Orders.myLatest(function(order){
+			$scope.phone = order.phone;
+		});
+
 		// Create new Order
 		$scope.create = function() {
 			// Create new Order object
@@ -88,14 +93,7 @@ angular.module('wechat').controller('WechatController', ['$scope','$http', '$sta
 		};
 
 		$scope.myOrder = function(){
-			$scope.code = $location.search().code;
-			$http.post('./users/wechat/info', {'code':$scope.code}).success(function(response) {
-				// If successful we assign the response to the global user model
-				//$scope.authentication.user = response;
-				$scope.wechatUser = response;
-			}).error(function(response) {
-				$scope.error = response.message;
-			});
+			$scope.order = Orders.myLatest();
 		};
 	}
 ]);

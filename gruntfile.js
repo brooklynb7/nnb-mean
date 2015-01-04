@@ -144,7 +144,9 @@ module.exports = function(grunt) {
 			server: {
 				options: {
 					index: 'server.js',
-					logDir: 'logs'
+					logDir: 'logs',
+					logFile: 'out-server.log',
+					error: 'err-server.log'
 				}
 			},
 			'server-wechat-api': {

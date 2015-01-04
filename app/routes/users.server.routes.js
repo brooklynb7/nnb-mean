@@ -29,6 +29,9 @@ module.exports = function(app) {
 
 	app.route('/users/wechat/info').post(users.getWechatUserInfo);
 
+	// Setting the wechat oauth routes
+	app.route('/auth/wechat').get(users.signinWechat);
+
 	// Finish by binding the user middleware
 	app.param('userId', users.userByID);
 };

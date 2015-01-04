@@ -58,17 +58,6 @@ module.exports = function(db) {
 
 	viewEngine.set(app);
 
-	// Environment dependent middleware
-	if (process.env.NODE_ENV === 'development') {
-		// Enable logger (logger)
-		//app.use(logger.dev);
-		app.use(logger.format2);
-		// Disable views cache
-		app.set('view cache', false);
-	} else if (process.env.NODE_ENV === 'production') {
-		app.locals.cache = 'memory';
-	}
-
 	parser(app);
 
 	// Express MongoDB session storage
@@ -98,6 +87,17 @@ module.exports = function(db) {
 
 	// Setting the app router and static folder
 	app.use(express.static(path.resolve('./public')));
+
+	// Environment dependent middleware
+	if (process.env.NODE_ENV === 'development') {
+		// Enable logger (logger)
+		//app.use(logger.dev);
+		app.use(logger.format2);
+		// Disable views cache
+		app.set('view cache', false);
+	} else if (process.env.NODE_ENV === 'production') {
+		app.locals.cache = 'memory';
+	}
 
 	// Globbing routing files
 	config.getGlobbedFiles('./app/routes/**/*.js').forEach(function(routePath) {

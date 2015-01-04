@@ -9,6 +9,9 @@ module.exports = function(app) {
 		.get(orders.list)
 		.post(/*users.requiresLogin,*/ orders.create);
 
+	app.route('/orders/my/latest')
+		.get(users.requiresLogin, orders.myLatest);
+
 	app.route('/orders/:orderId')
 		.get(orders.read)
 		.put(users.requiresLogin, orders.hasAuthorization, orders.update)

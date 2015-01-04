@@ -72,12 +72,30 @@ exports.signin = function(req, res, next) {
 		})(req, res, next);
 };
 
+exports.signinWechat = function(req, res, next) {
+	passport.authenticate('wechat', function(err, user, redirectURL) {
+		if (err) {
+			return res.send(err);
+		}
+		req.login(user, function(err) {
+			if (err) {
+				return res.send('login error');
+			}
+			if (redirectURL) {
+				return res.redirect(redirectURL);
+			} else {
+				return res.send('No callback url');
+			}
+		});
+	})(req, res, next);
+};
+
 /**
  * Signout
  */
 exports.signout = function(req, res) {
 	req.logout();
-	res.redirect('/');
+	res.redirect('../');
 };
 
 /**
@@ -104,6 +122,7 @@ exports.oauthCallback = function(strategy) {
  * Helper function to save or update a OAuth user profile
  */
 exports.saveOAuthUserProfile = function(req, providerUserProfile, done) {
+	var cbUrl = req.query.cb || null;
 	if (!req.user) {
 		// Define a search query fields
 		var searchMainProviderIdentifierField = 'providerData.' + providerUserProfile.providerIdentifierField;
@@ -143,11 +162,11 @@ exports.saveOAuthUserProfile = function(req, providerUserProfile, done) {
 
 						// And save the user
 						user.save(function(err) {
-							return done(err, user);
+							return done(err, user, cbUrl);
 						});
 					});
 				} else {
-					return done(err, user);
+					return done(err, user, cbUrl);
 				}
 			}
 		});
@@ -169,7 +188,8 @@ exports.saveOAuthUserProfile = function(req, providerUserProfile, done) {
 				return done(err, user, '/#!/settings/accounts');
 			});
 		} else {
-			return done(new Error('User is already connected using this provider'), user);
+			//return done(new Error('User is already connected using this provider'), user, cbUrl);
+			return done(null, user, cbUrl);
 		}
 	}
 };

@@ -62,16 +62,6 @@ var UserSchema = new Schema({
 		default: '',
 		trim: true
 	},
-	openid: {
-		type: String,
-		default: '',
-		trim: true
-	},
-	nickName:{
-		type: String,
-		default: '',
-		trim: true
-	},
 	salt: {
 		type: String
 	},

@@ -1,12 +1,3 @@
 <section data-ng-controller="WechatController" data-ng-init="myOrder()">
-	<div>OAuth Test: {{code}}</div>
-	<div data-ng-show="wechatUser">
-		<div>openid: {{wechatUser.openid}}</div>
-		<div>nickname: {{wechatUser.nickname}}</div>
-		<div>sex: {{wechatUser.sex}}</div>
-		<div>city: {{wechatUser.city}}</div>
-		<div>province: {{wechatUser.province}}</div>
-		<div>headimgurl: <img src='{{wechatUser.headimgurl}}' class="img-thumbnail" /></div>
-	</div>
-	<div data-ng-show="error">{{error}}</div>
+	<div data-ng-include="'./modules/wechat/views/_order-edit.client.view.html'"></div>
 </section>
