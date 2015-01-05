@@ -12,7 +12,7 @@ angular.module('orders').filter('getDaysAfterBearingText', [
 ]).filter('getHasFeverText', [
 	function() {
 		return function(hasFever) {
-			return hasFever ? '有' : '无';
+			return hasFever ? '是' : '否';
 		};
 	}
 ]).filter('getOrderStatusText', [

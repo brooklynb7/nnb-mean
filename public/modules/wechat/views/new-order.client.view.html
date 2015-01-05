@@ -1,18 +1,21 @@
 <section data-ng-controller="WechatController">
-	<div class="page-header">
-        <h3>我的订单 -- 创建</h3>
+    <div class="absolute" style="top:0px;left:0px">
+        <img src="./modules/core/img/brand/favicon.jpg" class="img-thumbnail" style='width:70px;' />
+    </div>
+	<div class="page-header m-t-20">
+        <!-- <h3 class='text-right'>我的订单 -- 创建</h3> -->
     </div>
     <div class="col-md-12">
         <form class="form-horizontal" data-ng-submit="create()">
             <fieldset>
                 <div class="form-group">
-                    <label class="control-label" for="nickName">昵称</label>
+                    <label class="control-label" for="nickName">昵称<span class='red'>*</span></label>
                     <div class="controls">
                         <input type="text" data-ng-model="nickName" id="nickName" class="form-control" placeholder="昵称" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="phone">电话</label>
+                    <label class="control-label" for="phone">电话<span class='red'>*</span></label>
                     <div class="controls">
                         <input type="text" data-ng-model="phone" id="phone" class="form-control" placeholder="电话" required>
                     </div>
@@ -31,15 +34,14 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="hasFever">有无发烧</label>
+                    <label class="control-label" for="hasFever">体温是否超过37.5度?</label>
                     <div class="controls">
-                        <!-- <input type="text" data-ng-model="hasFever" id="hasFever" class="form-control" placeholder="有无发烧"> -->
                         <label>
-                            <input type="radio" name="hasFever" value="" ng-model="hasFever" />无
+                            <input type="radio" name="hasFever" value="" ng-model="hasFever" />否
                         </label>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <label>
-                            <input type="radio" name="hasFever" value="1" ng-model="hasFever" />有
+                            <input type="radio" name="hasFever" value="1" ng-model="hasFever" />是
                         </label>
                     </div>
                 </div>

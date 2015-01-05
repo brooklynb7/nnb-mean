@@ -1,21 +1,24 @@
 <div data-ng-show="order.orderId">
-	<div class="page-header" data-ng-hide="order.status == 1 || order.status == 2">
+    <div class="absolute" style="top:0px;left:0px">
+        <img src="./modules/core/img/brand/favicon.jpg" class="img-thumbnail" style='width:70px;' />
+    </div>
+	<div class="page-header text-right" data-ng-hide="order.status == 1 || order.status == 2">
         <h3>修改订单: {{order.orderId}}</h3>
     </div>
-    <div class="page-header" data-ng-show="order.status == 1 || order.status == 2">
+    <div class="page-header text-right" data-ng-show="order.status == 1 || order.status == 2">
         <h3>订单{{order.orderId}}已<span data-ng-show="order.status == 1">确认</span><span data-ng-show="order.status == 2">完成</span>,不能修改</h3>
     </div>
     <div class="col-md-12">
         <form class="form-horizontal" data-ng-submit="update()" novalidate>
             <fieldset>
                 <div class="form-group">
-                    <label class="control-label" for="nickName">昵称</label>
+                    <label class="control-label" for="nickName">昵称<span class='red'>*</span></label>
                     <div class="controls">
                         <input type="text" data-ng-model="order.nickName" disabled id="nickName" class="form-control" placeholder="昵称" require>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="phone">电话</label>
+                    <label class="control-label" for="phone">电话<span class='red'>*</span></label>
                     <div class="controls">
                         <input type="text" data-ng-model="order.phone" disabled id="phone" class="form-control" placeholder="电话" require>
                     </div>
@@ -34,15 +37,14 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="hasFever">有无发烧</label>
+                    <label class="control-label" for="hasFever">体温是否超过37.5度?</label>
                     <div class="controls">
-                        <!-- <input type="text" data-ng-model="hasFever" id="hasFever" class="form-control" placeholder="有无发烧"> -->
                         <label>
-                            <input type="radio" data-ng-disabled="order.status == 1 || order.status == 2" name="hasFever" value="" ng-model="order.hasFever" />无
+                            <input type="radio" data-ng-disabled="order.status == 1 || order.status == 2" name="hasFever" value="" ng-model="order.hasFever" />否
                         </label>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <label>
-                            <input type="radio" data-ng-disabled="order.status == 1 || order.status == 2" name="hasFever" value="1" ng-model="order.hasFever" />有
+                            <input type="radio" data-ng-disabled="order.status == 1 || order.status == 2" name="hasFever" value="1" ng-model="order.hasFever" />是
                         </label>
                     </div>
                 </div>

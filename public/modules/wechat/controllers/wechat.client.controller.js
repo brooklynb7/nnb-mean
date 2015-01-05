@@ -24,10 +24,13 @@ angular.module('wechat').controller('WechatController', ['$scope','$http', '$sta
 			{id:'16',value:'大于15天'}
 		];
 
-		$scope.nickName = $scope.authentication ? $scope.authentication.user.username : '';
-		$scope.myLatestOrder = Orders.myLatest(function(order){
-			$scope.phone = order.phone;
-		});
+		$scope.nickName = $scope.authentication.user ? $scope.authentication.user.username : '';
+		
+		if($scope.authentication.user) {
+			$scope.myLatestOrder = Orders.myLatest(function(order){
+				$scope.phone = order.phone;
+			});
+		}
 
 		// Create new Order
 		$scope.create = function() {

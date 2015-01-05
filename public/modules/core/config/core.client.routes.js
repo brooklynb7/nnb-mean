@@ -24,6 +24,13 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 ]).run(['$rootScope', '$state', '$location', 'Authentication', 'USER_ROLES', 'AUTH_EVENTS',
 		function($rootScope, $state, $location, Authentication, USER_ROLES, AUTH_EVENTS) {
 			$rootScope.$on('$stateChangeStart', function(event, nextRoute, currentRoute) {
+				var subTitle = nextRoute.subTitle;
+				if(subTitle) {
+					document.title = '奶牛帮 - ' + subTitle;
+				} else {
+					document.title = '奶牛帮';
+				}
+
 				var authorizedRoles = nextRoute.authorizedRoles;
 				if (angular.isArray(authorizedRoles) && authorizedRoles.length > 0 &&
 					!Authentication.isAuthorized(authorizedRoles)) {
