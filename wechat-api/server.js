@@ -28,5 +28,5 @@ app.use(express.static(path.resolve('../public')));
 app.set('port', config.wechat.port);
 
 var server = app.listen(app.get('port'), function() {
-	console.log('NNB Wechat-API server listening on port ' + server.address().port);
+	console.log('[' + new Date().Format2() + '] NNB Wechat-API server listening on port ' + server.address().port);
 });

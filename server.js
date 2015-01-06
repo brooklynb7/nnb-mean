@@ -35,4 +35,4 @@ app.listen(config.port);
 exports = module.exports = app;
 
 // Logging initialization
-console.log('NNB application started on port ' + config.port);
+console.log('[' + new Date().Format2() + '] NNB application started on port ' + config.port);
