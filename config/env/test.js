@@ -2,7 +2,6 @@
 
 module.exports = {
 	db: 'mongodb://localhost/nnb-test',
-	port: 9001,
 	app: {
 		title: '奶牛帮'
 	},

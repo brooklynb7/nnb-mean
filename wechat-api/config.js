@@ -24,14 +24,6 @@ module.exports = {
 		},
 		mp_url: 'https://mp.weixin.qq.com/',
 		mp_login_url: 'https://mp.weixin.qq.com/cgi-bin/login?lang=zh_CN',
-		generateOAuthUrl: function(redirect_uri) {
-			return 'https://open.weixin.qq.com/connect/oauth2/authorize?' +
-				'appid=' + wechatConfig.appId + '&' +
-				'redirect_uri=' + encodeURIComponent(redirect_uri) + '&' +
-				'response_type=code&' +
-				'scope=snsapi_base&' +
-				'state=1#wechat_redirect';
-		},
 		subscribeMsg: '感谢您关注奶牛帮！我们将竭诚为您服务',
 		menuButton: {
 			valuableBook: {

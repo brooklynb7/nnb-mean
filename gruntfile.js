@@ -121,11 +121,17 @@ module.exports = function(grunt) {
 			}
 		},
 		env: {
+			dev:{
+				NODE_ENV: 'development'
+			},
 			test: {
 				NODE_ENV: 'test'
 			},
 			secure: {
 				NODE_ENV: 'secure'
+			},
+			production: {
+				NODE_ENV: 'production'
 			}
 		},
 		mochaTest: {
@@ -174,6 +180,17 @@ module.exports = function(grunt) {
 		grunt.config.set('applicationJavaScriptFiles', config.assets.js);
 		grunt.config.set('applicationCSSFiles', config.assets.css);
 	});
+
+	//Production server task.
+	grunt.registerTask('production', ['env:production', 'build', 'stop', 'start']);
+
+	//Development server task
+	grunt.registerTask('dev', ['lint', 'stop', 'start']);
+
+	grunt.registerTask('start', ['forever:server:start', 'forever:server-wechat-api:start']);
+
+	//Stop all forever servers
+	grunt.registerTask('stop', ['forever:server:stop', 'forever:server-wechat-api:stop']);
 
 	// Default task(s).
 	grunt.registerTask('default', ['lint', 'concurrent:default']);
