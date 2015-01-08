@@ -24,8 +24,12 @@
 					<input type="password" id="password" name="password" class="form-control" data-ng-model="credentials.password" placeholder="密码">
 				</div>
 				<div class="text-center form-group">
-					<button type="submit" class="btn btn-large btn-primary">注册</button>&nbsp; 或&nbsp;
+					<button type="submit" class="btn btn-large btn-primary">注册</button>					
+					&nbsp; 或&nbsp;
 					<a href="./#!/signin" class="show-signup">登录</a>
+				</div>				
+				<div data-ng-show="loading" class="text-center text-danger">
+					<span data-ng-include="'./modules/core/views/loading.client.view.html'" ></span>
 				</div>
 				<div data-ng-show="error" class="text-center text-danger">
 					<strong data-ng-bind="error"></strong>

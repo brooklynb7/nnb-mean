@@ -17,6 +17,9 @@
 				<!-- <div class="forgot-password">
 					<a href="./#!/password/forgot">忘记密码?</a>
 				</div> -->
+				<div data-ng-show="loading" class="text-center text-danger">
+					<span data-ng-include="'./modules/core/views/loading.client.view.html'" ></span>
+				</div>
 				<div data-ng-show="error" class="text-center text-danger">
 					<strong data-ng-bind="error"></strong>
 				</div>
