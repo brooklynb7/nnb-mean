@@ -5,6 +5,7 @@
  */
 var mongoose = require('mongoose'),
 	Schema = mongoose.Schema,
+	autoIncrement = require('mongoose-auto-increment'),
 	crypto = require('crypto');
 
 /**
@@ -145,5 +146,12 @@ UserSchema.statics.findUniqueUsername = function(username, suffix, callback) {
 		}
 	});
 };
+
+UserSchema.plugin(autoIncrement.plugin, {
+    model: 'User',
+    field: 'userId',
+    startAt: 10000,
+    incrementBy: 1
+});
 
 mongoose.model('User', UserSchema);
