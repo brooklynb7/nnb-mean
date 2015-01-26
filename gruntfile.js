@@ -182,7 +182,12 @@ module.exports = function(grunt) {
 	});
 
 	//Production server task.
-	grunt.registerTask('production', ['env:production', 'build', 'stop', 'start']);
+	grunt.registerTask('production', ['env:production', 'build', 'restart']);
+
+
+	grunt.registerTask('start', ['forever:server:start', 'forever:server-wechat-api:start']);
+	grunt.registerTask('stop', ['forever:server:stop', 'forever:server-wechat-api:stop']);
+	grunt.registerTask('restart', ['forever:server:restart', 'forever:server-wechat-api:restart']);
 
 	//Development server task
 	grunt.registerTask('dev', ['lint', 'stop', 'start']);

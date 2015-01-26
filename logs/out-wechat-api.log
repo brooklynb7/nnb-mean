@@ -49,3 +49,9 @@ error: Forever detected script exited with code: 1
 Application loaded using the "production" environment configuration
 [2015-01-06 14:31:59] NNB Wechat-API server listening on port 9002
 error: Forever detected script exited with code: 1
+Application loaded using the "production" environment configuration
+[2015-01-26 17:29:10] NNB Wechat-API server listening on port 9002
+error: Forever detected script exited with code: 1
+error: Script restart attempt #1
+Application loaded using the "production" environment configuration
+[2015-01-26 17:32:35] NNB Wechat-API server listening on port 9002

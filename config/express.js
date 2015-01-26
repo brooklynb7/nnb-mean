@@ -88,11 +88,11 @@ module.exports = function(db) {
 	// Setting the app router and static folder
 	app.use(express.static(path.resolve('./public')));
 
+	app.use(logger.format2);
 	// Environment dependent middleware
 	if (process.env.NODE_ENV === 'development') {
 		// Enable logger (logger)
-		//app.use(logger.dev);
-		app.use(logger.format2);
+		//app.use(logger.dev);		
 		// Disable views cache
 		app.set('view cache', false);
 	} else if (process.env.NODE_ENV === 'production') {
