@@ -168,3 +168,76 @@ Application loaded using the "production" environment configuration
 The API property deprecated, Use require("wechat-oauth") instead
 [2015-01-26 17:44:08] NNB application started on port 9001
 Error: failed to connect to [localhost:27017]
+Application loaded using the "production" environment configuration
+The API property deprecated, Use require("wechat-oauth") instead
+[2015-01-27 15:23:15] NNB application started on port 9001
+Application loaded using the "production" environment configuration
+The API property deprecated, Use require("wechat-oauth") instead
+[2015-01-27 15:23:20] NNB application started on port 9001
+[2015-01-27 15:23:32] 127.0.0.1 GET / 304 - -805.663 ms
+[2015-01-27 15:23:42] 127.0.0.1 POST /auth/signin 400 39 -24.256 ms
+[2015-01-27 15:23:46] 127.0.0.1 POST /auth/signin 400 39 -6.604 ms
+[2015-01-27 15:23:51] 127.0.0.1 POST /auth/signin 400 39 -4.202 ms
+[2015-01-27 15:23:52] 127.0.0.1 POST /auth/signin 400 39 -5.035 ms
+[2015-01-27 15:24:06] 127.0.0.1 GET / 304 - -11.604 ms
+Application loaded using the "production" environment configuration
+Application loaded using the "production" environment configuration
+The API property deprecated, Use require("wechat-oauth") instead
+[2015-01-27 15:43:45] NNB application started on port 9001
+[2015-01-27 15:43:46] NNB Wechat-API server listening on port 9002
+[2015-01-27 15:43:48] 127.0.0.1 GET / 200 - -65.925 ms
+[2015-01-27 15:43:51] 127.0.0.1 GET / 304 - -1.954 ms
+[2015-01-27 15:44:02] 127.0.0.1 POST /auth/signin 200 366 -48.969 ms
+[2015-01-27 15:44:04] 127.0.0.1 GET /users 200 - -11.464 ms
+[2015-01-27 15:44:06] 127.0.0.1 GET /orders 200 - -12.620 ms
+[2015-01-27 15:45:48] 127.0.0.1 GET / 200 - -3.010 ms
+[2015-01-27 15:45:49] 127.0.0.1 GET /orders 304 - -7.657 ms
+[2015-01-27 15:45:52] 127.0.0.1 GET /users 304 - -4.230 ms
+[2015-01-27 15:45:53] 127.0.0.1 GET /orders 304 - -10.750 ms
+Application loaded using the "production" environment configuration
+The API property deprecated, Use require("wechat-oauth") instead
+[2015-01-27 15:55:47] NNB application started on port 9001
+Application loaded using the "production" environment configuration
+[2015-01-27 15:56:02] NNB Wechat-API server listening on port 9002
+Application loaded using the "production" environment configuration
+The API property deprecated, Use require("wechat-oauth") instead
+[2015-01-27 15:56:15] NNB application started on port 9001
+Application loaded using the "production" environment configuration
+The API property deprecated, Use require("wechat-oauth") instead
+[2015-01-27 16:02:16] NNB application started on port 9001
+Application loaded using the "production" environment configuration
+[2015-01-27 16:02:45] NNB Wechat-API server listening on port 9002
+Application loaded using the "production" environment configuration
+The API property deprecated, Use require("wechat-oauth") instead
+[2015-01-27 16:50:42] NNB application started on port 9001
+Application loaded using the "production" environment configuration
+The API property deprecated, Use require("wechat-oauth") instead
+[2015-01-27 16:51:17] NNB application started on port 9001
+[2015-01-27 16:51:45] 127.0.0.1 GET / 200 - -70.740 ms
+Application loaded using the "production" environment configuration
+The API property deprecated, Use require("wechat-oauth") instead
+[2015-01-27 16:53:07] NNB application started on port 9001
+[2015-01-27 16:53:22] 127.0.0.1 GET / 200 - -66.537 ms
+[2015-01-27 16:53:24] 127.0.0.1 GET / 304 - -4.179 ms
+Application loaded using the "production" environment configuration
+The API property deprecated, Use require("wechat-oauth") instead
+[2015-01-27 16:54:13] NNB application started on port 9001
+Application loaded using the "production" environment configuration
+The API property deprecated, Use require("wechat-oauth") instead
+[2015-01-27 16:57:58] NNB application started on port 9001
+Application loaded using the "production" environment configuration
+The API property deprecated, Use require("wechat-oauth") instead
+[2015-01-27 17:02:23] NNB application started on port 9001
+Application loaded using the "production" environment configuration
+The API property deprecated, Use require("wechat-oauth") instead
+[2015-01-27 17:02:30] NNB application started on port 9001
+Application loaded using the "production" environment configuration
+The API property deprecated, Use require("wechat-oauth") instead
+[2015-01-27 17:04:13] NNB application started on port 9001
+[2015-01-27 17:06:50] 127.0.0.1 GET / 200 - -64.306 ms
+[2015-01-27 17:06:59] 127.0.0.1 GET /favicon.ico 404 - -27.388 ms
+Application loaded using the "production" environment configuration
+The API property deprecated, Use require("wechat-oauth") instead
+[2015-01-27 17:18:28] NNB application started on port 9001
+[2015-01-27 17:18:29] 127.0.0.1 GET / 304 - -53.976 ms
+[2015-01-27 17:22:42] 127.0.0.1 GET /favicon.ico 404 - -10.927 ms

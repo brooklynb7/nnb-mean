@@ -92,7 +92,11 @@ angular.module('orders').controller('OrdersController', ['$scope', '$stateParams
 
 		// Find a list of Orders
 		$scope.find = function() {
+			$scope.showLoading(true);
 			$scope.orders = Orders.query();
+			$scope.orders.$promise.finally(function(){
+				$scope.showLoading(false);
+			});
 		};
 
 		// Find existing Order

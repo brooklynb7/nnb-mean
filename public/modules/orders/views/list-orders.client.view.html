@@ -3,6 +3,9 @@
         <h3>订单列表</h3>
         <a href="#!/orders/create" class="absolute r-10 b-16">新建订单</a>
     </div>
+    <div data-ng-show="loading" class="text-center text-danger">
+        <span data-ng-include="'./modules/core/views/loading.client.view.html'" ></span>
+    </div>
     <div class="list-group">
         <a data-ng-repeat="order in orders" data-ng-href="#!/orders/{{order._id}}" class="list-group-item">
             <h5 class="list-group-item-heading">
