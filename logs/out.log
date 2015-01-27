@@ -241,3 +241,7 @@ The API property deprecated, Use require("wechat-oauth") instead
 [2015-01-27 17:18:28] NNB application started on port 9001
 [2015-01-27 17:18:29] 127.0.0.1 GET / 304 - -53.976 ms
 [2015-01-27 17:22:42] 127.0.0.1 GET /favicon.ico 404 - -10.927 ms
+Application loaded using the "production" environment configuration
+The API property deprecated, Use require("wechat-oauth") instead
+[2015-01-27 17:25:14] NNB application started on port 9001
+Error: failed to connect to [localhost:27017]

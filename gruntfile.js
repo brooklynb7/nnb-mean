@@ -184,15 +184,7 @@ module.exports = function(grunt) {
 	//Production server task.
 	grunt.registerTask('web-prod', ['env:dev', 'build', 'env:production', 'forever:server:stop', 'forever:server:start']);
 	grunt.registerTask('wechat-prod', ['env:production', 'forever:server-wechat-api:stop','forever:server-wechat-api:start']);
-
-	//Development server task
-	grunt.registerTask('dev', ['lint', 'stop', 'start']);
-
-	grunt.registerTask('start', ['forever:server:start', 'forever:server-wechat-api:start']);
-
-	//Stop all forever servers
-	grunt.registerTask('stop', ['forever:server:stop', 'forever:server-wechat-api:stop']);
-
+	
 	// Default task(s).
 	grunt.registerTask('default', ['lint', 'concurrent:default']);
 
