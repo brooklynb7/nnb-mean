@@ -17,7 +17,7 @@ module.exports = function(app) {
 	app.route('/orders/:orderId')
 		.get(orders.read)
 		.put(users.requiresLogin, orders.hasAuthorization, orders.update)
-		.delete(users.requiresLogin, orders.hasAuthorization, orders.delete);
+		.delete(users.requiresLogin, users.hasAuthorization([config.roles.super, config.roles.admin]), orders.delete);
 
 	app.route('/orders/:orderId/cancel')
 		.put(users.requiresLogin, orders.hasAuthorization, orders.cancel);
