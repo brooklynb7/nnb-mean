@@ -184,6 +184,9 @@ module.exports = function(grunt) {
 	//Production server task.
 	grunt.registerTask('web-prod', ['env:dev', 'build', 'env:production', 'forever:server:stop', 'forever:server:start']);
 	grunt.registerTask('wechat-prod', ['env:production', 'forever:server-wechat-api:stop','forever:server-wechat-api:start']);
+
+	grunt.registerTask('web-dev', ['env:dev', 'lint', 'forever:server:stop', 'forever:server:start']);
+	grunt.registerTask('wechat-dev', ['env:dev', 'lint', 'forever:server-wechat-api:stop','forever:server-wechat-api:start']);
 	
 	// Default task(s).
 	grunt.registerTask('default', ['lint', 'concurrent:default']);
