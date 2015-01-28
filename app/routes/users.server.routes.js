@@ -4,6 +4,7 @@
  * Module dependencies.
  */
 var passport = require('passport');
+var config = require('../../config/config');
 
 module.exports = function(app) {
 	// User Routes
@@ -12,8 +13,8 @@ module.exports = function(app) {
 	// Setting up the users profile api
 	app.route('/users/me').get(users.me);
 	app.route('/users')
-		.get(users.requiresLogin, users.hasSuperAuthorization, users.list)
-		.put(users.update);
+		.get(users.requiresLogin, users.hasAuthorization([config.roles.super]), users.list)
+		.put(users.requiresLogin, users.update);
 	app.route('/users/accounts').delete(users.removeOAuthProvider);
 
 	// Setting up the users password api

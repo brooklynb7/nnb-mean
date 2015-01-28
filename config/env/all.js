@@ -7,6 +7,13 @@ module.exports = {
 		keywords: '奶牛帮'
 	},
 	port: process.env.PORT || 9001,
+	roles: {
+		all: '*',
+		user: 'user',
+		service: 'service',
+		admin: 'admin',
+		super: 'super'	
+	},
 	templateEngine: 'swig',
 	sessionSecret: 'MEAN',
 	sessionCollection: 'sessions',
