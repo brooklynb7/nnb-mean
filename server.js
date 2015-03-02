@@ -6,6 +6,7 @@ var init = require('./config/init')(),
 	config = require('./config/config'),
 	mongoose = require('mongoose'),
 	autoIncrement = require('mongoose-auto-increment'),
+	moment = require('moment'),
 	chalk = require('chalk');
 
 /**
@@ -35,4 +36,4 @@ app.listen(config.port);
 exports = module.exports = app;
 
 // Logging initialization
-console.log('[' + new Date().Format2() + '] NNB application started on port ' + config.port);
+console.log('[' + moment().format('YYYY-MM-DD h:mm:ss') + '] NNB application started on port ' + config.port);

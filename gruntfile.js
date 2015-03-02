@@ -110,6 +110,17 @@ module.exports = function(grunt) {
 				files: {
 					'public/dist/application.js': '<%= applicationJavaScriptFiles %>'
 				}
+			},
+			dev: {
+				options: {
+					add: false,
+					remove: true,
+					singleQuotes: true,
+				},
+				files: [{
+					expand: true,
+					src: '<%= applicationJavaScriptFiles %>'
+				}]
 			}
 		},
 		concurrent: {
@@ -191,6 +202,9 @@ module.exports = function(grunt) {
 	grunt.registerTask('web-start', ['forever:server:stop', 'forever:server:start']);
 	grunt.registerTask('wechat-start', ['forever:server-wechat-api:stop','forever:server-wechat-api:start']);
 
+	grunt.registerTask('web-stop', ['forever:server:stop']);
+	grunt.registerTask('wechat-stop', ['forever:server-wechat-api:stop']);
+
 	// Default task(s).
 	grunt.registerTask('default', ['lint', 'concurrent:default']);
 
@@ -208,4 +222,11 @@ module.exports = function(grunt) {
 
 	// Test task.
 	grunt.registerTask('test', ['env:test', 'mochaTest', 'karma:unit']);
+	grunt.registerTask('test-mocha', ['env:test', 'mochaTest']);
+	grunt.registerTask('test-karma', ['env:test', 'karma:unit']);
+
+
+	//Remove ngAnnotate
+	grunt.registerTask('remove-ngAnnotate', ['loadConfig', 'ngAnnotate:dev']);
+
 };

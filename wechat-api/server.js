@@ -2,21 +2,19 @@
 
 var init = require('../config/init')(),
 	express = require('express'),
-	cookieParser = require('cookie-parser'),
-	bodyParser = require('body-parser'),
 	path = require('path'),
 	config = require('./config'),
-	logger = require('../config/logger'),
-	parser = require('../config/parser'),
-	viewEngine = require('../config/view-engine'),
-	errorHandler = require('../config/error-handler'),
+	logger = require('../config/middlewares/logger'),
+	parser = require('../config/middlewares/parser'),
+	templateEngine = require('../config/middlewares/template-engine'),
+	moment = require('moment'),
 	routes = require('./routes');
 
 var app = express();
 
-viewEngine.set(app);
+templateEngine(app);
 
-app.use(logger.format2);
+logger(app);
 
 parser(app);
 
@@ -28,5 +26,5 @@ app.use(express.static(path.resolve('../public')));
 app.set('port', config.wechat.port);
 
 var server = app.listen(app.get('port'), function() {
-	console.log('[' + new Date().Format2() + '] NNB Wechat-API server listening on port ' + server.address().port);
+	console.log('[' + moment().format('YYYY-MM-DD h:mm:ss') + '] NNB Wechat-API server listening on port ' + server.address().port);
 });
