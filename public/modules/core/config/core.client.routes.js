@@ -1,8 +1,7 @@
 'use strict';
 
 // Setting up route
-angular.module('core').config(['$stateProvider', '$urlRouterProvider',
-	function($stateProvider, $urlRouterProvider) {
+angular.module('core').config(function($stateProvider, $urlRouterProvider) {
 		// Redirect to home view when route not found
 		$urlRouterProvider.otherwise('/');
 
@@ -20,9 +19,7 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 			url: '/',
 			templateUrl: 'modules/core/views/home.client.view.html'
 		});
-	}
-]).run(['$rootScope', '$state', '$location', 'Authentication', 'USER_ROLES', 'AUTH_EVENTS',
-		function($rootScope, $state, $location, Authentication, USER_ROLES, AUTH_EVENTS) {
+	}).run(function($rootScope, $state, $location, Authentication, USER_ROLES, AUTH_EVENTS) {
 			$rootScope.$on('$stateChangeStart', function(event, nextRoute, currentRoute) {
 				var subTitle = nextRoute.subTitle;
 				if(subTitle) {
@@ -52,5 +49,4 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 			$rootScope.$on(AUTH_EVENTS.notAuthorized, function() {
 				$state.go('403');
 			});
-		}
-	]);
+		});

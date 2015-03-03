@@ -1,7 +1,6 @@
 'use strict';
 
-angular.module('core').controller('CoreController', ['$scope', '$location', 'USER_ROLES',
-	function($scope, $location, USER_ROLES) {
+angular.module('core').controller('CoreController', function($scope, $location, USER_ROLES) {
 		$scope.userRoles = USER_ROLES;
 
 		$scope.loading = false;
@@ -17,5 +16,4 @@ angular.module('core').controller('CoreController', ['$scope', '$location', 'USE
 				$scope.hideHeader = false;
 			}
 		});
-	}
-]);
+	});
