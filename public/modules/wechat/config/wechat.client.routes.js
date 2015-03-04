@@ -6,8 +6,8 @@ angular.module('wechat').config(['$stateProvider',
 		// Wechat state routing
 		$stateProvider.
 		state('wechat-survey', {
-			url: '/wechat/survey',
-			templateUrl: 'modules/wechat/views/survey.client.view.html',
+			url: '/wechat/survey/1',
+			templateUrl: 'modules/wechat/views/survey/survey1.client.view.html',
 			subTitle: '调查问卷'
 		}).
 		state('wechat-my-orders', {

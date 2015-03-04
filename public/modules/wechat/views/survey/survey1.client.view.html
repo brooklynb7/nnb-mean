@@ -1,0 +1,58 @@
+<section data-ng-controller="WechatSurveyController">
+	<div class="absolute" style="top:0px;left:0px">
+		<img src="./modules/core/img/brand/favicon.jpg" class="img-thumbnail" style='width:70px;' />
+	</div>
+	<div class="page-header m-t-20">
+	</div>
+	<div class="col-md-12">
+		<form class="form-horizontal" data-ng-submit="postSurvey1()">
+			<fieldset>
+				<div class="form-group">
+					<label class="control-label">1.您是从什么渠道了解到奶牛帮的?</label>
+					<div class="controls">
+						<label>
+							<input type="radio" name="channel" value="1" ng-model="survey1.channel" /> 朋友推荐
+						</label>
+						<label>
+							<input type="radio" name="channel" value="2" ng-model="survey1.channel" /> 社交网站
+						</label>
+						<label>
+							<input type="radio" name="channel" value="3" ng-model="survey1.channel" /> 媒体杂志
+						</label>
+						<label>
+							<input type="radio" name="channel" value="4" ng-model="survey1.channel" /> 其他
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label">2.您愿意为您或您的家人预约奶牛帮的上门服务吗?</label>
+					<div class="controls">
+						<label>
+							<input type="radio" name="willOrder" value="1" ng-model="survey1.willOrder" /> 愿意
+						</label>
+						<label>
+							<input type="radio" name="willOrder" value="2" ng-model="survey1.willOrder" /> 暂不考虑
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label">3.您或您的家人是否接受过奶牛帮的上门服务?</label>
+					<div class="controls">
+						<label>
+							<input type="radio" name="acceptSevice" value="1" ng-model="survey1.acceptService" /> 接受过
+						</label>
+						<label>
+							<input type="radio" name="acceptSevice" value="2" ng-model="survey1.acceptService" /> 还没有
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+                    <input type="submit" class="btn btn-default" value="提交">
+                </div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</section>

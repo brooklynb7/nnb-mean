@@ -1,33 +1,64 @@
 'use strict';
 
-angular.module('wechat').controller('WechatController', ['$scope','$http', '$stateParams', '$location', 'Authentication', 'Orders',
-	function($scope,$http, $stateParams, $location, Authentication, Orders) {
+angular.module('wechat').controller('WechatController',
+	function($scope, $http, $stateParams, $location, Authentication, Orders) {
 		$scope.authentication = Authentication;
 		$scope.daysAfterBearing = '1';
 		$scope.hasFever = '';
-		$scope.daysAfterBearingOptions = [
-			{id:'1',value:'1天'},
-			{id:'2',value:'2天'},
-			{id:'3',value:'3天'},
-			{id:'4',value:'4天'},
-			{id:'5',value:'5天'},
-			{id:'6',value:'6天'},
-			{id:'7',value:'7天'},
-			{id:'8',value:'8天'},
-			{id:'9',value:'9天'},
-			{id:'10',value:'10天'},
-			{id:'11',value:'11天'},
-			{id:'12',value:'12天'},
-			{id:'13',value:'13天'},
-			{id:'14',value:'14天'},
-			{id:'15',value:'15天'},
-			{id:'16',value:'大于15天'}
-		];
+		$scope.daysAfterBearingOptions = [{
+			id: '1',
+			value: '1天'
+		}, {
+			id: '2',
+			value: '2天'
+		}, {
+			id: '3',
+			value: '3天'
+		}, {
+			id: '4',
+			value: '4天'
+		}, {
+			id: '5',
+			value: '5天'
+		}, {
+			id: '6',
+			value: '6天'
+		}, {
+			id: '7',
+			value: '7天'
+		}, {
+			id: '8',
+			value: '8天'
+		}, {
+			id: '9',
+			value: '9天'
+		}, {
+			id: '10',
+			value: '10天'
+		}, {
+			id: '11',
+			value: '11天'
+		}, {
+			id: '12',
+			value: '12天'
+		}, {
+			id: '13',
+			value: '13天'
+		}, {
+			id: '14',
+			value: '14天'
+		}, {
+			id: '15',
+			value: '15天'
+		}, {
+			id: '16',
+			value: '大于15天'
+		}];
 
 		$scope.nickName = $scope.authentication.user ? $scope.authentication.user.username : '';
-		
-		if($scope.authentication.user) {
-			$scope.myLatestOrder = Orders.myLatest(function(order){
+
+		if ($scope.authentication.user) {
+			$scope.myLatestOrder = Orders.myLatest(function(order) {
 				$scope.phone = order.phone;
 			});
 		}
@@ -35,7 +66,7 @@ angular.module('wechat').controller('WechatController', ['$scope','$http', '$sta
 		// Create new Order
 		$scope.create = function() {
 			// Create new Order object
-			var order = new Orders ({
+			var order = new Orders({
 				nickName: this.nickName,
 				phone: this.phone,
 				address: this.address,
@@ -89,14 +120,14 @@ angular.module('wechat').controller('WechatController', ['$scope','$http', '$sta
 		};
 
 		// Find existing Order
-		$scope.findOne = function() {			
-			$scope.order = Orders.get({ 
+		$scope.findOne = function() {
+			$scope.order = Orders.get({
 				id: $stateParams.id
 			});
 		};
 
-		$scope.myOrder = function(){
+		$scope.myOrder = function() {
 			$scope.order = Orders.myLatest();
 		};
 	}
-]);
+);
