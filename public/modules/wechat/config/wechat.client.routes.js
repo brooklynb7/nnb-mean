@@ -2,13 +2,27 @@
 
 //Setting up route
 angular.module('wechat').config(['$stateProvider',
-	function($stateProvider) {
+	function($stateProvider, $stateParams) {
 		// Wechat state routing
 		$stateProvider.
+		state('wechat', {
+			url: '/wechat',
+			templateUrl: 'modules/wechat/views/wechat.client.view.html',
+			subTitle: '开奶宝典'
+		}).
 		state('wechat-survey', {
-			url: '/wechat/survey/1',
-			templateUrl: 'modules/wechat/views/survey/survey1.client.view.html',
+			url: '/wechat/survey/:id',
+			templateUrl: function($stateParams) {
+				return 'modules/wechat/views/survey/survey'+ $stateParams.id +'.client.view.html';
+			},			
 			subTitle: '调查问卷'
+		}).
+		state('wechat-survey-success', {
+			url: '/wechat/survey/:id/success',
+			templateUrl: function($stateParams) {
+				return 'modules/wechat/views/survey/survey'+ $stateParams.id +'-success.client.view.html';
+			},			
+			subTitle: '提交成功'
 		}).
 		state('wechat-my-orders', {
 			url: '/wechat/orders/my',
@@ -35,7 +49,7 @@ angular.module('wechat').config(['$stateProvider',
 			templateUrl: 'modules/wechat/views/new-order.client.view.html',
 			subTitle: '下订单'
 		}).
-		state('about', {
+		state('wechat-about', {
 			url: '/wechat/about',
 			templateUrl: 'modules/wechat/views/about.client.view.html',
 			subTitle: '关于奶牛帮'
@@ -44,11 +58,6 @@ angular.module('wechat').config(['$stateProvider',
 			url: '/wechat/activities',
 			templateUrl: 'modules/wechat/views/activities.client.view.html',
 			subTitle: '最新活动'
-		}).
-		state('wechat', {
-			url: '/wechat',
-			templateUrl: 'modules/wechat/views/wechat.client.view.html',
-			subTitle: '开奶宝典'
 		});
 	}
 ]);

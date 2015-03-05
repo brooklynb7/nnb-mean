@@ -146,6 +146,10 @@ exports.createMenu = function(req, res) {
 				'type': 'view',
 				'name': menuButton.about.name,
 				'url': menuButton.about.url
+			},{
+				'type': 'view',
+				'name': menuButton.survey.name,
+				'url': menuButton.survey.url
 			}]
 		}, {
 			'name': menuButton.orderStaff.name,

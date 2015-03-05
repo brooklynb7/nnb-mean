@@ -38,6 +38,10 @@ module.exports = {
 				name:'关于奶牛帮',
 				url: wechatConfig.url + '/about'
 			},
+			survey:{
+				name:'调查问卷',
+				url: client.getAuthorizeURL(wechatConfig.host + '/auth/wechat?cb=' + encodeURIComponent(wechatConfig.url + '/survey/1'), '1', 'snsapi_userinfo')
+			},
 			newOrder:{
 				name: '下订单',
 				url: client.getAuthorizeURL(wechatConfig.host + '/auth/wechat?cb=' + encodeURIComponent(wechatConfig.url + '/orders/new'), '1', 'snsapi_userinfo')
