@@ -74,7 +74,7 @@ module.exports = {
 			ourPrice: {
 				name: '价格',
 				key: 'OUR_PRICE',
-				msg: '上门服务\n中环以内：700/次\n中环以外：800/次'
+				msg: '上门服务 800/次'
 			},
 			honor: {
 				name: '资质荣誉',
