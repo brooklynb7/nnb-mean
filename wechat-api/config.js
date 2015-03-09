@@ -84,7 +84,7 @@ module.exports = {
 			contactUs: {
 				name: '联系我们',
 				key: 'CONTACT_US',
-				msg: '亲, 我们的服务热线是51619161, 期待您的来电'
+				msg: '亲, 我们的服务热线是400-728-1661, 期待您的来电'
 			}
 		}
 	}
